@@ -30,4 +30,15 @@ class User
     	return $stmt->fetch();
     }
 
+    public function getPDO()
+    {
+        return $this->pdo;
+    }
+
+    public function getById($id)
+    {
+        $stmt = $this->pdo->prepare("SELECT * FROM utilisateur WHERE id = ?");
+        $stmt->execute([$id]);
+        return $stmt->fetch();
+    }
 }

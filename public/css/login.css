@@ -1,72 +1,247 @@
+/* === STYLE COMMUN À TOUTES LES PAGES === */
 body {
-    margin: 0; padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #3a7c5a;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #3a7c5a;
 }
+
+/* === BARRE DU HAUT === */
+.header {
+  height: 50px;
+  background-color: #7d7d7d;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Barre blanche avec le nom et avatar */
+.user-info {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  gap: 10px;
+}
+
+.user-name {
+  font-size: 14px;
+  color: #333;
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
+
+/* === CONTAINER CENTRAL === */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 50px);
+}
+
+/* === FORMULAIRE DE CONNEXION === */
+.login-box {
+  background-color: #d6d6d6;
+  padding: 40px 60px;
+  border-radius: 30px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+  min-width: 300px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: normal;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: 18px;
+  border-radius: 15px;
+  border: none;
+  background-color: #b29b9b;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  background-color: #4b4f9e;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #373a70;
+}
+
+/* === MESSAGES D'ERREUR / SUCCÈS === */
+.error-message {
+  color: red;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.message-success {
+  color: green;
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.message-error {
+  color: red;
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* === DASHBOARD BOX === */
+.dashboard-box {
+  background-color: #d6d6d6;
+  padding: 40px 60px;
+  border-radius: 30px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+  min-width: 400px;
+  text-align: center;
+}
+
+/* === BOUTONS DU DASHBOARD === */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.button-grid button {
+  background-color: #4b4f9e;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.button-grid button:hover {
+  background-color: #373a70;
+}
+
+/* Header */
 .header {
     height: 50px;
     background-color: #7d7d7d;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
 }
-.container {
+
+.btn-return {
+    background-color: #4b4f9e;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-return:hover {
+    background-color: #373a70;
+}
+
+.main-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: calc(100vh - 50px);
-}
-.login-box {
-    background-color: #d6d6d6;
-    padding: 40px 60px;
-    border-radius: 30px;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-    min-width: 300px;
-}
-label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: normal;
-}
-input[type="email"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px 15px;
-    margin-bottom: 18px;
-    border-radius: 15px;
-    border: none;
-    background-color: #b29b9b;
-    font-size: 16px;
-}
-input[type="submit"] {
-    background-color: #4b4f9e;
-    color: white;
-    padding: 10px 25px;
-    border-radius: 15px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-input[type="submit"]:hover {
-    background-color: #373a70;
-}
-.error-message {
-    color: red;
-    text-align: center;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-.message-success {
-    color: green;
-    text-align: center;
-    margin-top: 15px;
-    font-weight: bold;
+    padding: 20px;
 }
 
-.message-error {
-    color: red;
-    text-align: center;
-    margin-top: 15px;
-    font-weight: bold;
+/* Rectangle noir arrondi avec bordure blanche */
+.logs-box {
+    background-color: #000;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    padding: 30px 40px;
+    width: 700px;
+    color: #fff;
+    font-family: monospace;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.logs-box p {
+    margin: 5px 0;
+}
+
+.logs-box {
+  background-color: #000;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  padding: 30px 40px;
+  width: 700px;
+  color: #fff;
+  font-family: monospace;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.logs-box p {
+  margin: 5px 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px);
+  padding: 30px;
+}
+
+/* Boîte noire avec bord blanc et coins arrondis */
+.logs-box {
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  padding: 30px;
+  width: 80%;
+  max-width: 800px;
+  max-height: 75vh;
+  overflow-y: auto;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  font-family: monospace;
+}
+
+.logs-box p {
+  margin: 5px 0;
+  white-space: pre-wrap;
 }

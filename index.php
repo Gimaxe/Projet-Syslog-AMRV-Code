@@ -12,12 +12,35 @@ $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 // Appelle du contrôleur
 require_once __DIR__ . '/controllers/UserController.php';
+require_once __DIR__ . '/controllers/DashboardController.php';
+
 
 switch ($uri) {
     case '/':
     case '/login': // Gère à la fois GET et POST
         $controller = new UserController();
         $controller->login();
+        break;
+    
+    case '/dashboard':
+        if (!isset($_SESSION['user_id'])) {
+            header('Location: /login');
+            exit;
+        }
+        require_once __DIR__ . '/controllers/DashboardController.php';
+        $controller = new DashboardController();
+        $controller->show();
+        break;
+    // ... au début, n'oublie pas d'inclure le contrôleur au besoin
+
+    case '/instance':
+        if (!isset($_SESSION['user_id'])) {
+            header('Location: /login');
+            exit;
+        }
+        require_once __DIR__ . '/controllers/InstanceController.php';
+        $controller = new InstanceController();
+        $controller->show();
         break;
 
     case '/logout':
