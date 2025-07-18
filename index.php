@@ -43,11 +43,9 @@ switch ($uri) {
         $controller->show();
         break;
 
-    case '/logout':
-        session_destroy();
-        //  Ne redirige plus, affiche juste un message de confirmation
-        echo "<p style='text-align:center; font-weight:bold; color:green;'>Déconnexion réussie.</p>";
-        echo "<p style='text-align:center;'><a href='/login'>Revenir à la page de connexion</a></p>";
+     case '/logout':
+        $controller = new UserController();
+        $controller->logout(); 
         break;
 
     default:

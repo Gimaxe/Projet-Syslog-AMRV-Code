@@ -1,11 +1,11 @@
 <?php
 require_once __DIR__ . '/models/User.php';
 
-$nom     = 'GUBIEN';
-$prenom  = 'Mathis';
-$email   = 'm.gubien42@gmail.com';
-$mdp     = 'test'; // mot de passe en clair
-$avatar  = 'public/images/avatars/avatar_Mathis.png'; // chemin relatif ou URL
+$nom     = 'MAMOUNA';
+$prenom  = 'Anthony';
+$email   = 'anthonymamouna@gmail.com';
+$mdp     = 'Password123'; // mot de passe en clair
+$avatar  = ''; // chemin relatif ou URL
 
 echo "Début du script\n";
 

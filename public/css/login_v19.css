@@ -1,0 +1,109 @@
+
+/* === STYLE COMMUN À TOUTES LES PAGES === */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #3a7c5a; /* Garde le vert de fond */
+}
+
+/* === HEADER (pour login.php, il est vide, donc pas besoin de styles complexes) === */
+.header {
+  height: 50px; /* Garde la hauteur pour l'espace */
+  background-color: #7d7d7d; /* Couleur de la barre grise du haut */
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  /* Pas besoin de flexbox si rien dedans */
+}
+
+/* === CONTAINER CENTRAL (pour centrer le formulaire) === */
+.container {
+  display: flex;
+  justify-content: center; /* Centre la login-box horizontalement */
+  align-items: center;   /* Centre la login-box verticalement */
+  height: calc(100vh - 50px); /* Prend toute la hauteur disponible moins le header */
+}
+
+/* === BOÎTE DE CONNEXION (le formulaire) === */
+.login-box {
+  background-color: #d6d6d6; /* Fond blanc (gris clair) de la boîte */
+  padding: 40px 60px; /* Padding interne de la boîte (Haut/Bas: 40px, Gauche/Droite: 60px) */
+  border-radius: 30px; /* Bords arrondis */
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.3); /* Ombre légère */
+  min-width: 380px; /* Largeur minimale de la boîte. Ajustez si vous voulez plus ou moins large */
+  text-align: center; /* Centre le contenu interne (logo, formulaire) */
+}
+
+.label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: normal;
+  text-align: left; /* Alignez le texte des labels à gauche */
+  color: #333; /* Couleur du texte des labels */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Espace entre chaque paire label/input */
+    text-align: center; /* Centre le contenu (label et input) dans chaque groupe */
+}
+
+.login-box label {
+    display: block; /* Force le label à prendre sa propre ligne, au-dessus de l'input */
+    margin-bottom: 5px; /* Espacement entre le label et son input */
+    font-weight: bold;
+    text-align: center; /* Centre le texte du label */
+}
+
+.login-box input[type="email"],
+.login-box input[type="password"] {
+  width: 100%; /* Prend toute la largeur disponible de son parent */
+  max-width: 250px; /* Limite la largeur des champs de saisie */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Inclut padding et border dans la largeur */
+}
+
+.login-box input[type="submit"] {
+    margin-top: 20px; /* Espace au-dessus du bouton de soumission */
+    /* ... (vos autres styles pour le bouton submit) ... */
+}
+
+input[type="submit"] {
+  background-color: #4b4f9e; /* Couleur de fond du bouton */
+  color: white;
+  padding: 10px 25px;
+  border-radius: 20px; /* Rayon des bordures du bouton */
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px; /* Espace au-dessus du bouton */
+}
+
+input[type="submit"]:hover {
+  background-color: #373a70;
+}
+
+/* === MESSAGES D'ERREUR / SUCCÈS (Gardés comme ils sont, ils ont l'air fonctionnels) === */
+.message-success {
+  color: green;
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.message-error {
+  color: red;
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.login-logo {
+  display: block; /* S'assure que le logo prend sa propre ligne */
+  margin: 0 auto 20px auto; /* Centre le logo horizontalement et ajoute une marge en bas */
+  max-width: 150px; /* Taille maximale du logo. Ajustez si nécessaire */
+  height: auto;
+}

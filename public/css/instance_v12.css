@@ -1,0 +1,305 @@
+
+
+
+/* === STYLE COMMUN À TOUTES LES PAGES === */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #3a7c5a;
+}
+
+/* === BARRE DU HAUT === */
+.header {
+  height: 50px;
+  background-color: #7d7d7d;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Barre blanche avec le nom et avatar */
+.user-info {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  gap: 10px;
+}
+
+.user-name {
+  font-size: 14px;
+  color: #333;
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
+
+/* === CONTAINER CENTRAL === */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 50px);
+}
+
+/* === FORMULAIRE DE CONNEXION === */
+.login-box {
+  background-color: #d6d6d6;
+  padding: 40px 60px;
+  border-radius: 30px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+  min-width: 300px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: normal;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: 18px;
+  border-radius: 15px;
+  border: none;
+  background-color: #b29b9b;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  background-color: #4b4f9e;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #373a70;
+}
+
+/* === MESSAGES D'ERREUR / SUCCÈS === */
+.error-message {
+  color: red;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.message-success {
+  color: green;
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.message-error {
+  color: red;
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* === DASHBOARD BOX === */
+.dashboard-box {
+  background-color: #d6d6d6;
+  padding: 40px 60px;
+  border-radius: 30px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+  min-width: 400px;
+  text-align: center;
+}
+
+/* === BOUTONS DU DASHBOARD === */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.button-grid button {
+  background-color: #4b4f9e;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.button-grid button:hover {
+  background-color: #373a70;
+}
+
+/* --- Styles pour le Menu Déroulant du Profil --- */
+.user-info {
+    position: relative; /* Indispensable pour positionner le menu déroulant par rapport à cet élément */
+    cursor: pointer; /* Indique que l'élément est cliquable */
+}
+
+.dropdown-menu {
+    display: none; /* Masqué par défaut */
+    position: absolute;
+    top: 100%; /* Positionne le menu juste en dessous de .user-info */
+    right: 0; /* Alignement à droite de .user-info */
+    background-color: #f9f9f9; /* Couleur de fond du menu */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000; /* Assure que le menu apparaît au-dessus des autres éléments */
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    margin-top: 5px; /* Petit espace entre le profil et le menu */
+}
+
+/* Affichage du menu quand la classe 'show' est ajoutée par JavaScript */
+.dropdown-menu.show {
+    display: block;
+}
+
+.logout-button {
+    background-color: #e74c3c; /* Rouge pour le bouton Déconnexion */
+    color: white;
+    padding: 7px 12px; /* <-- MODIFIÉ : Réduit le padding (haut/bas 7px, gauche/droite 12px) */
+    font-size: 14px;   /* <-- AJOUTÉ/MODIFIÉ : Réduit la taille de la police pour un bouton plus compact */
+    text-decoration: none;
+    display: block;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #c0392b; /* Rouge plus foncé au survol */
+}
+
+/* --- Pour le bouton "Retour au dashboard" --- */
+.return-button-wrapper {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.btn-return {
+  /* NOUVEAUX STYLES POUR LE BOUTON RETOUR (Rectangle arrondi gris) */
+  background-color: #4b4f9e;;
+  color: white;
+  border: none;
+  padding: 10px 20px; /* Padding ajusté */
+  border-radius: 15px; /* Arrondi des coins */
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1em; /* Taille de police plus standardisée */
+  transition: background-color 0.3s ease;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* Légère ombre pour le relief */
+  text-decoration: none; /* Au cas où il serait traité comme un lien */
+  display: inline-block; /* S'assure que le bouton ne prend pas toute la largeur */
+}
+
+.btn-return:hover {
+  background-color: #373a70; /* Gris légèrement plus foncé au survol */
+}
+
+/* --- Pour la grande boîte noire centrée --- */
+.main-instance-content {
+  display: flex;
+  justify-content: center; /* Centre horizontalement le conteneur de la boîte */
+  align-items: center;   /* Centre verticalement le conteneur de la boîte */
+  height: calc(100vh - 50px - 40px); /* Hauteur restante de la fenêtre, ajustez si nécessaire */
+  padding-bottom: 20px; /* Petit padding pour éviter que la boîte touche le bas */
+}
+
+/* --- Pour la grande boîte noire centrée --- */
+/* (Le code pour .main-instance-content reste inchangé) */
+
+.instance-box h2 {
+  color: #fff;
+  margin: 0; /* Garde la marge à 0 pour que le padding de la box contrôle l'espacement */
+  /* MODIFIÉ : Taille de police divisée par deux (de 1em à 0.5em) */
+  font-size: 1em; /* C'est 1/4 de la taille originale (3em -> 1em -> 0.5em) */
+  text-align: left; /* Assure que le titre H2 est aussi aligné à gauche */
+}
+
+/* (Le code pour .instance-box p reste inchangé, si vous l'avez) */
+.instance-box p {
+  color: #fff;
+  text-align: left;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+/* Dans /public/css/instance_v8.css */
+.main-instance-content {
+  display: flex;
+  flex-direction: column; /* Assurez-vous que c'est 'column' pour empiler verticalement */
+  align-items: center; /* Centrer horizontalement les éléments enfants si désiré */
+  gap: 20px; /* Ajoute un espace entre le filtre et la boîte des logs */
+  padding: 20px; /* Ou tout autre padding */
+}
+
+.instance-box {
+  width: 100%; /* Assure que la boîte des logs prend toute la largeur */
+  max-width: 800px; /* Optionnel : Limiter la largeur max pour correspondre au filtre */
+  /* Vos styles existants pour la boîte noire */
+  background-color: #000;
+  color: #0f0;
+  border: 1px solid #0a0;
+  padding: 10px;
+  height: 400px;
+  overflow-y: scroll;
+  font-family: monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.filter-controls label {
+  font-weight: bold;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.filter-controls select {
+ padding: 8px 12px;
+ border-radius: 8px;
+ border: 1px solid #ccc;
+ background-color: white;
+ font-size: 1em;
+ cursor: pointer;
+ flex-grow: 1;
+ max-width: 300px;
+}
+
+.filter-controls .btn-filter {
+  background-color: #d6d6d6; /* Gris clair */
+  color: #333; /* Texte gris foncé ou noir pour contraste */
+  border: none;
+  padding: 10px 20px; /* Padding ajusté */
+  border-radius: 15px; /* Arrondi des coins */
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1em; /* Taille de police plus standardisée */
+  transition: background-color 0.3s ease;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* Légère ombre pour le relief */
+}
+  
+  .filter-controls .btn-filter:hover {
+ background-color: #b2b2b2; /* Gris légèrement plus foncé au survol */
+}

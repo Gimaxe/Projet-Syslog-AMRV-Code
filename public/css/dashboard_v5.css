@@ -126,9 +126,9 @@ input[type="submit"]:hover {
 
 /* === BOUTONS DU DASHBOARD === */
 .button-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+  display: flex;         /* Utilise Flexbox pour le centrage */
+  justify-content: center; /* Centre les éléments horizontalement dans le conteneur */
+  align-items: center; 
   margin-top: 30px;
 }
 
@@ -147,101 +147,44 @@ input[type="submit"]:hover {
   background-color: #373a70;
 }
 
-/* Header */
-.header {
-    height: 50px;
-    background-color: #7d7d7d;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
+/* --- Styles pour le Menu Déroulant du Profil --- */
+.user-info {
+    position: relative; /* Indispensable pour positionner le menu déroulant par rapport à cet élément */
+    cursor: pointer; /* Indique que l'élément est cliquable */
 }
 
-.btn-return {
-    background-color: #4b4f9e;
+.dropdown-menu {
+    display: none; /* Masqué par défaut */
+    position: absolute;
+    top: 100%; /* Positionne le menu juste en dessous de .user-info */
+    right: 0; /* Alignement à droite de .user-info */
+    background-color: #f9f9f9; /* Couleur de fond du menu */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000; /* Assure que le menu apparaît au-dessus des autres éléments */
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    margin-top: 5px; /* Petit espace entre le profil et le menu */
+}
+
+/* Affichage du menu quand la classe 'show' est ajoutée par JavaScript */
+.dropdown-menu.show {
+    display: block;
+}
+
+.logout-button {
+    background-color: #e74c3c; /* Rouge pour le bouton Déconnexion */
     color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 12px;
-    cursor: pointer;
+    padding: 7px 12px; /* <-- MODIFIÉ : Réduit le padding (haut/bas 7px, gauche/droite 12px) */
+    font-size: 14px;   /* <-- AJOUTÉ/MODIFIÉ : Réduit la taille de la police pour un bouton plus compact */
+    text-decoration: none;
+    display: block;
+    border-radius: 5px;
     font-weight: bold;
-    font-size: 14px;
     transition: background-color 0.3s ease;
 }
 
-.btn-return:hover {
-    background-color: #373a70;
-}
-
-.main-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 50px);
-    padding: 20px;
-}
-
-/* Rectangle noir arrondi avec bordure blanche */
-.logs-box {
-    background-color: #000;
-    border: 2px solid #fff;
-    border-radius: 25px;
-    padding: 30px 40px;
-    width: 700px;
-    color: #fff;
-    font-family: monospace;
-    max-height: 80vh;
-    overflow-y: auto;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-}
-
-.logs-box p {
-    margin: 5px 0;
-}
-
-.logs-box {
-  background-color: #000;
-  border: 2px solid #fff;
-  border-radius: 25px;
-  padding: 30px 40px;
-  width: 700px;
-  color: #fff;
-  font-family: monospace;
-  max-height: 80vh;
-  overflow-y: auto;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-}
-
-.logs-box p {
-  margin: 5px 0;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-.main-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 70px);
-  padding: 30px;
-}
-
-/* Boîte noire avec bord blanc et coins arrondis */
-.logs-box {
-  background-color: #000;
-  color: #fff;
-  border: 2px solid #fff;
-  border-radius: 20px;
-  padding: 30px;
-  width: 80%;
-  max-width: 800px;
-  max-height: 75vh;
-  overflow-y: auto;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-  font-family: monospace;
-}
-
-.logs-box p {
-  margin: 5px 0;
-  white-space: pre-wrap;
+.logout-button:hover {
+    background-color: #c0392b; /* Rouge plus foncé au survol */
 }

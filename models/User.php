@@ -6,19 +6,22 @@ class User
 {
     private $pdo;
 
-    public function __construct()
+     public function __construct()
     {
-        global $config;
+        // Charge les configurations depuis le fichier config.php
+        $config = require __DIR__ . '/../config.php'; 
+        $siteDbConfig = $config['site_db']; // Accède à la section 'site_db'
         
-        $dsn = "mysql:host={$config['host']};dbname={$config['db']};charset={$config['charset']}";
+        $dsn = "mysql:host={$siteDbConfig['host']};dbname={$siteDbConfig['db']};charset={$siteDbConfig['charset']}";
         $options = [
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         ];
 
         try {
-            $this->pdo = new PDO($dsn, $config['user'], $config['pass'], $options);
+            $this->pdo = new PDO($dsn, $siteDbConfig['user'], $siteDbConfig['pass'], $options);
         } catch (\PDOException $e) {
+            error_log("Erreur connexion BDD site : " . $e->getMessage());
             throw new \Exception("Erreur connexion BDD : " . $e->getMessage());
         }
     }
