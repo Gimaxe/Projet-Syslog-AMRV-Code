@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Dashboard</title>
-  <link rel="stylesheet" href="/public/css/dashboard_v5.css">
-  <link rel="icon" type="image/x-icon" href="/public/images/logo_logcatch_v2.png"> </head>
+  <link rel="stylesheet" href="/public/css/dashboard_v8.css">
+  <link rel="icon" type="image/x-icon" href="/public/images/logo_logcatch_favicon.png"> </head>
 </head>
 <body>
   <div class="header">
@@ -30,7 +30,7 @@
       <h2>Bienvenue sur Logcatch</h2>
       <p>Voici vos services :</p>
       <div class="button-grid">
-        <a href="/instance?name=wordpress"><button>WordPress</button></a>
+        <a href="/instance?name=wordpress"><button>Nextcloud</button></a>
       </div>
     </div>
   </div>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>Instance - Logs</title>
-    <link rel="stylesheet" href="/public/css/instance_v12.css" />
-    <link rel="icon" type="image/x-icon" href="/public/images/logo_logcatch_v2.png">
+    <link rel="stylesheet" href="/public/css/instance_v17.css" />
+    <link rel="icon" type="image/x-icon" href="/public/images/logo_logcatch_favicon.png">
 </head>
 
 <body>
@@ -23,6 +23,7 @@
             </div>
         </div>
     </div>
+    
 
     <div class="return-button-wrapper">
         <button class="btn-return" onclick="window.location.href='/dashboard'">← Retour au dashboard</button>

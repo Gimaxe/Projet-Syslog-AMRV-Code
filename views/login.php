@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>Connexion</title>
-    <link rel="stylesheet" href="/public/css/login_v19.css">
-    <link rel="icon" type="image/x-icon" href="/public/images/logo_logcatch_v2.png"> </head>
+    <link rel="stylesheet" href="/public/css/login_v20.css">
+    <link rel="icon" type="image/x-icon" href="/public/images/logo_logcatch_favicon.png"> </head>
 
 </head>
 <body>

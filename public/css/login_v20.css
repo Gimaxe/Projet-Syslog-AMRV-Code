@@ -7,14 +7,13 @@ body {
   background-color: #3a7c5a; /* Garde le vert de fond */
 }
 
-/* === HEADER (pour login.php, il est vide, donc pas besoin de styles complexes) === */
+/* === HEADER (pour login.php, il est vide, donc pas besoin de styles complexes) ===
 .header {
-  height: 50px; /* Garde la hauteur pour l'espace */
-  background-color: #7d7d7d; /* Couleur de la barre grise du haut */
+  height: 50px;
+  background-color: #7d7d7d;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  /* Pas besoin de flexbox si rien dedans */
-}
+} */
 
 /* === CONTAINER CENTRAL (pour centrer le formulaire) === */
 .container {

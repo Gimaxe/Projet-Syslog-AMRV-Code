@@ -256,18 +256,22 @@ input[type="submit"]:hover {
 }
 
 .instance-box {
-  width: 100%; /* Assure que la boîte des logs prend toute la largeur */
-  max-width: 800px; /* Optionnel : Limiter la largeur max pour correspondre au filtre */
-  /* Vos styles existants pour la boîte noire */
   background-color: #000;
   color: #0f0;
-  border: 1px solid #0a0;
-  padding: 10px;
-  height: 400px;
-  overflow-y: scroll;
-  font-family: monospace;
-  white-space: pre-wrap;
-  word-wrap: break-word;
+  /* MODIFICATION ICI : Cadre blanc de 2px et coins arrondis */
+  border: 4px solid white; /* Cadre blanc de 2px */
+  border-radius: 20px; /* Coins arrondis pour la boîte */
+  padding: 15px; /* Un padding uniforme est souvent plus simple à gérer */
+  width: 100%; /* S'adapte à la largeur du parent flex */
+  max-width: 800px; /* Garde la même max-width que le filtre pour l'alignement */
+  height: 60vh; /* Vous pouvez ajuster cette hauteur */
+  /* MODIFICATION ICI : Légère ombre pour le relief, ajustée pour aller avec le cadre blanc */
+  display: block;
+  text-align: left;
+  overflow-y: auto; /* Permet le défilement si le contenu dépasse */
+  font-family: monospace; /* S'assure que la police monospace est appliquée */
+  white-space: pre-wrap; /* Maintient les retours à la ligne et les espaces */
+  word-wrap: break-word; /* Casse les mots longs pour éviter le dépassement horizontal */
 }
 
 .filter-controls label {
