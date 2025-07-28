@@ -30,7 +30,7 @@
       <h2>Bienvenue sur Logcatch</h2>
       <p>Voici vos services :</p>
       <div class="button-grid">
-        <a href="/instance?name=wordpress"><button>Nextcloud</button></a>
+        <a href="/instance?name=nextcloud"><button>NextCloud</button></a>
       </div>
     </div>
   </div>
